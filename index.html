@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+#isim {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2em;
+  padding: 10px;
+}
+
+#geri-sayim {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#sayac {
+  text-align: center;
+  font-size: 3em;
+  color: red;
+  font-weight: bold;
+}
+</style>
+  <title>Geri Sayim Sayaci</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.1.0/js/jquery.countdown-tr.min.js"></script>
+  <script src="C:\Users\canak\Desktop\jquery.countdown-tr.min.js"></script>
+</head>
+<body>
+  <div id="header">
+    <a href="https://www.linkedin.com/in/can-akar-0ba98379/"><h1 id="isim">CAN AKAR</h1></a>
+  </div>
+  <div id="geri-sayim">
+    <h2>Bir Tatil Geri Sayımı Daha</h2>
+    <h3>Gerçi çok uzak o zamana neler olur neler biter?</h3>
+    <p id="sayac"></p>
+  </div>
+ <script>
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 3, 2024 12:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="sayac"
+  document.getElementById("sayac").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("sayac").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+</body>
+</html>
