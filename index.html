@@ -40,10 +40,10 @@
   color: red;
   font-weight: bold;
 }
-#video-container {
-  text-align: center;
-  width: 100%;
-  height: auto;
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 }
 </style>
   <title>CAN AKAR_BİR TATİL HAYALİ</title>
@@ -56,7 +56,6 @@
   </div>
   <div id="geri-sayim">
     <h2>Bir Tatil Geri Sayımı Daha</h2>
-    <h3>Gerçi çok uzak o zamana neler olur neler biter?</h3>
     <p id="sayac"></p>
   </div>
  <script>
@@ -79,8 +78,8 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="sayac"
-  document.getElementById("sayac").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  document.getElementById("sayac").innerHTML = days + " gün " + hours + " saat "
+  + minutes + " dakika " + seconds + " saniye ";
     
   // If the count down is over, write some text 
   if (distance < 0) {
@@ -89,8 +88,11 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
-<div id="video-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/NSIhLaI5Q3E?autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+<div class="flex">
+	<div><iframe width="560" height="315" src="https://www.youtube.com/embed/NSIhLaI5Q3E?autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div><iframe width="560" height="315" src="https://www.bizevdeyokuz.com/datca-ne-yenir-nerede-yenir/"></iframe>
+	</div>
 </div>
 </body>
 </html>
